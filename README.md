@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Devlog AI
 
-## Getting Started
+**개발/IT 기술 블로그 포스팅을 작성해주는 AI 웹 서비스**
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 프로젝트 소개
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Devlog AI는 블로그에 글을 한 번 쓸 때마다 몇시간씩 걸리는 나 자신을 위해 제작한 서비스입니다.
+주제와 키워드를 입력하면 OpenAI를 활용해 개발·IT 관련 블로그 글이 자동으로 생성되며,
+글 스타일(튜토리얼, TIL, 트러블슈팅)을 선택하여 목적에 맞는 포스트를 만들 수 있습니다.  
+생성된 글은 제목, 본문, 해시태그, 메타 디스크립션까지 한 번에 제공됩니다.
+Devlog를 활용해 **초안을 빠르게 완성하고 블로그 글을 작성하는 시간을 단축**할 수 있습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 개발 목표
 
-## Learn More
+- OpenAI API 사용해보기
+- 스타일별 프롬프트 설계로 일관된 품질의 아웃풋 제공
+- Next.js server action 사용 경험
+- Tailwind 학습, Shadcn 사용으로 UI 제작 시간 단축하기
+- 생성된 Markdown 콘텐츠를 편집하기 위한 에디터 세팅과 파일 export기능 구현해보기
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 주요 기능
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **스타일 선택** – 튜토리얼 / TIL / 트러블슈팅 : 스타일에 따라 문단 구조와 규칙, 톤 등 각각 세팅된 프롬프트 적용
+- **주제·키워드 입력** – 원하는 주제와 강조할 키워드를 입력해 생성 요청
+- **AI 블로그 글 생성** – OpenAI GPT-4o-mini로 제목, 본문, 해시태그, 메타 디스크립션 생성
+- **결과 확인/편집** – 생성된 글을 에디터 화면에서 바로 확인 및 편집
+- **초기화** – 입력값과 결과를 한 번에 지우고 새로 작성
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 기술 스택
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Frontend**: Next.js 16, React 19, TypeScript, Tailwind CSS, Shadcn
+- **Backend**: Next.js Server Actions
+- **AI**: OpenAI API (gpt-4o-mini)
