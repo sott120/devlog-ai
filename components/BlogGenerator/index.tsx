@@ -4,7 +4,7 @@ import { generateBlogPost } from "@/app/actions/generate";
 import GeneratorForm from "@/components/BlogGenerator/GeneratorForm";
 import { IGeneratedResponse, TopicStyleType } from "@/types";
 import { useState } from "react";
-import Editor from "@/components/BlogGenerator/Editor";
+import MarkdownEditor from "@/components/BlogGenerator/MarkdownEditor";
 import { Loader2 } from "lucide-react";
 
 const BlogGenerator = () => {
@@ -55,7 +55,7 @@ const BlogGenerator = () => {
         handleGenerate={handleGenerate}
         handleClickClear={handleClickClear}
       />
-      <Editor result={result} error={error} />
+      <MarkdownEditor result={result} error={error} />
     </>
   );
 };

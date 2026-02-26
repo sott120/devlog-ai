@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "@toast-ui/editor/dist/toastui-editor.css";
+import "prismjs/themes/prism.css";
 
 export const metadata: Metadata = {
   title: "Devlog AI",
@@ -23,7 +25,7 @@ export default function RootLayout({
             </div>
           </header>
           <main className="z-1 flex flex-1 flex-col">
-            <div className="container m-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center p-4 lg:p-0">
+            <div className="container m-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-start p-4 lg:p-0">
               {children}
             </div>
           </main>
