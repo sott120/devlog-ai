@@ -38,10 +38,10 @@ const MarkdownEditor = ({ result, error }: IEditorProps) => {
 
   return (
     <section className="mt-6 mb-10 flex w-full flex-col gap-4">
-      <div className="rounded-lg border bg-white/70 p-4">
-        <p className="text-lg font-semibold">{result.title}</p>
-        <p className="text-muted-foreground mt-2 text-sm">{result.metaDescription}</p>
-        <p className="text-muted-foreground mt-2 text-xs">#{result.hashtags.join(" #")}</p>
+      <div className="rounded-lg border border-zinc-200 bg-white/70 p-4 dark:border-zinc-700 dark:bg-zinc-900/70">
+        <p className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">{result.title}</p>
+        <p className="mt-2 text-sm text-zinc-700 dark:text-zinc-300">{result.metaDescription}</p>
+        <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-400">#{result.hashtags.join(" #")}</p>
       </div>
 
       <div className="flex flex-wrap gap-2">

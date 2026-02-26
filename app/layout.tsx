@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@toast-ui/editor/dist/toastui-editor.css";
 import "prismjs/themes/prism.css";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "Devlog AI",
@@ -19,9 +20,10 @@ export default function RootLayout({
         <div className="relative flex min-h-screen flex-col">
           <div className="fixed-center circle-blur" />
           <header className="app-shadow app-blur sticky top-0 z-50 w-full border-b bg-white/5">
-            <div className="container m-auto h-14 w-full max-w-5xl p-4 lg:px-0">
+            <div className="container m-auto flex h-14 w-full max-w-5xl items-center justify-between p-4 lg:px-0">
               <h1 className="sr-only">Devlog AI</h1>
               <span className="font-bold">LOGO</span>
+              <ThemeToggle />
             </div>
           </header>
           <main className="z-1 flex flex-1 flex-col">
