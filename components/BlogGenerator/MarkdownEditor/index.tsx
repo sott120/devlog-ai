@@ -33,11 +33,7 @@ const MarkdownEditor = ({ result, error }: IEditorProps) => {
   }
 
   if (null === result) {
-    return (
-      <section className="mt-6 w-full rounded-lg border border-dashed p-6 text-center">
-        <p className="text-muted-foreground text-sm">주제와 키워드를 입력하고 글을 생성하면 편집기가 표시됩니다.</p>
-      </section>
-    );
+    return null;
   }
 
   return (

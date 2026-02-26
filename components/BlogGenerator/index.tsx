@@ -5,6 +5,7 @@ import GeneratorForm from "@/components/BlogGenerator/GeneratorForm";
 import { IGeneratedResponse, TopicStyleType } from "@/types";
 import { useState } from "react";
 import MarkdownEditor from "@/components/BlogGenerator/MarkdownEditor";
+import ScrollTopButton from "@/components/BlogGenerator/ScrollTopButton";
 import { Loader2 } from "lucide-react";
 
 const BlogGenerator = () => {
@@ -56,6 +57,7 @@ const BlogGenerator = () => {
         handleClickClear={handleClickClear}
       />
       <MarkdownEditor result={result} error={error} />
+      <ScrollTopButton watchValue={result?.content ?? ""} />
     </>
   );
 };
