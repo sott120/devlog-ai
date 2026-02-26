@@ -13,15 +13,27 @@ const ScrollTopButton = ({ watchValue }: IScrollTopButtonProps) => {
 
   useEffect(() => {
     const updateVisibility = (): void => {
-      const isScrollable = document.documentElement.scrollHeight > window.innerHeight;
+      const documentHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+      const isScrollable = documentHeight > window.innerHeight;
       setIsVisible(isScrollable);
     };
 
     updateVisibility();
+    const timeoutId = window.setTimeout(updateVisibility, 120);
+    const animationFrameId = window.requestAnimationFrame(updateVisibility);
+
     window.addEventListener("resize", updateVisibility);
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+
+    const mutationObserver = new MutationObserver(updateVisibility);
+    mutationObserver.observe(document.body, { childList: true, subtree: true, attributes: true });
 
     return () => {
+      window.clearTimeout(timeoutId);
+      window.cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", updateVisibility);
+      window.removeEventListener("scroll", updateVisibility);
+      mutationObserver.disconnect();
     };
   }, [watchValue]);
 
