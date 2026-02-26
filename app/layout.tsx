@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import "./globals.css";
 import "@toast-ui/editor/dist/toastui-editor.css";
 import "prismjs/themes/prism.css";
@@ -22,7 +23,12 @@ export default function RootLayout({
           <header className="app-shadow app-blur sticky top-0 z-50 w-full border-b bg-white/5">
             <div className="container m-auto flex h-14 w-full max-w-5xl items-center justify-between p-4 lg:px-0">
               <h1 className="sr-only">Devlog AI</h1>
-              <span className="font-bold">LOGO</span>
+              <div className="flex cursor-default items-center gap-2 select-none">
+                <span draggable={false} className="font-bold">
+                  Devlog AI
+                </span>
+                <Image src="/logo_m.png" alt="Devlog AI Logo" width={26} height={26} draggable={false} priority />
+              </div>
               <ThemeToggle />
             </div>
           </header>

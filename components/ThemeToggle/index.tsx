@@ -20,7 +20,7 @@ const ThemeToggle = () => {
     <button
       type="button"
       onClick={handleToggleDarkMode}
-      className="relative h-8 w-16 rounded-full border bg-white/60 p-1 transition-colors dark:bg-black/40"
+      className="relative h-8 w-16 cursor-pointer rounded-full border bg-white/60 p-1 transition-colors dark:bg-black/40"
       aria-label="다크모드 토글"
     >
       <span
